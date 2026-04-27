@@ -20,6 +20,7 @@ IDENT   [a-zA-Z][a-zA-Z0-9_]*
 {STRING}            { return STRING; }
 [0-9]+\.[0-9]+     { return NUM; }
 [0-9]+              { return NUM; }
+{IDENT}             { return IDENT; }
 "="                 { return ASSIGN; }
 ","                 { return COMMA; }
 "print"             { return PRINT; }
