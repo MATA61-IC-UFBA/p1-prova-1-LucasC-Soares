@@ -9,7 +9,7 @@ int yylex();
 
 %option noyywrap
 
-STRING  ["][^\"]*
+STRING  ["][a-zA-Z0-9_ \t]*[^"]
 COMMENT "//"[^\n]*
 IDENT   [a-zA-Z][a-zA-Z0-9_]*
 %%
