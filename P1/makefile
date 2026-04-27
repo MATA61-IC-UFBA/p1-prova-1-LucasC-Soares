@@ -16,3 +16,4 @@ clean:
 	rm lex.yy.c
 	rm prova1.tab.*
 	rm prova1
+	rm exemplo.out
