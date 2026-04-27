@@ -17,7 +17,6 @@ void yyerror(const char *msg);
 
 %%
 
-/* programa */
 program
 : stmt_list 
 ;
@@ -60,7 +59,6 @@ exprlist
 | exprlist COMMA IDENT
 | exprlist COMMA STRING
 ;
-/* completar */
 
 %%
 
