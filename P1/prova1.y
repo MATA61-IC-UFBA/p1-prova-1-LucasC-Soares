@@ -28,6 +28,8 @@ stmt_list
 stmt
 : IDENT ASSIGN expr
 | PRINT LPAREN exprlist RPAREN
+| LENGTH LPAREN (IDENT|STRING) RPAREN
+| CONCAT LPAREN (IDENT|STRING) COMMA exprlist RPAREN
 | expr
 ;
 
@@ -46,6 +48,13 @@ term
 factor
 : NUM
 | LPAREN expr RPAREN
+;
+
+
+exprlist
+: IDENT
+| exprlist COMMA IDENT
+| exprlist COMMA STRING
 ;
 /* completar */
 
