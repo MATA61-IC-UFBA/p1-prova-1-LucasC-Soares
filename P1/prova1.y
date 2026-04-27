@@ -32,6 +32,21 @@ stmt
 ;
 
 expr
+: term
+| expr PLUS term
+| expr MINUS term
+;
+
+term
+: factor
+| term TIMES factor
+| term DIV factor
+;
+
+factor
+: NUM
+| LPAREN expr RPAREN
+;
 /* completar */
 
 %%
