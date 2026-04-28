@@ -30,6 +30,9 @@ stmt
 : IDENT ASSIGN expr
 | PRINT LPAREN exprlist RPAREN
 | expr
+| COMMENT
+| COMMENT EOL
+| EOL
 ;
 
 expr
@@ -51,13 +54,14 @@ term
 factor
 : NUM
 | LPAREN expr RPAREN
+| IDENT
+| STRING
 ;
 
 
 exprlist
-: IDENT
-| exprlist COMMA IDENT
-| exprlist COMMA STRING
+: expr
+| exprlist COMMA expr
 ;
 
 %%
