@@ -12,12 +12,12 @@ int yylex();
 STRING  \"[^\"]*\"
 COMMENT "//"[^\n]*
 IDENT   [a-zA-Z][a-zA-Z0-9_]*
+NUM [0-9]+(\.[0-9]+)?
 %%
 
 {COMMENT}              { return COMMENT; }
 {STRING}            { return STRING; }
-[0-9]+\.[0-9]+     { return NUM; }
-[0-9]+              { return NUM; }
+{NUM}               { return NUM; }
 "print"             { return PRINT; }
 "length"             { return LENGTH; }
 "concat"             { return CONCAT; }
