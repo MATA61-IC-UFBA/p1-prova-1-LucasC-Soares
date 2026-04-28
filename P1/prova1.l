@@ -9,7 +9,7 @@ int yylex();
 
 %option noyywrap
 
-STRING  ["][a-zA-Z0-9_ \t]*[^"]
+STRING  \"[^\"]*\"
 COMMENT "//"[^\n]*
 IDENT   [a-zA-Z][a-zA-Z0-9_]*
 %%
@@ -18,12 +18,12 @@ IDENT   [a-zA-Z][a-zA-Z0-9_]*
 {STRING}            { return STRING; }
 [0-9]+\.[0-9]+     { return NUM; }
 [0-9]+              { return NUM; }
-{IDENT}             { return IDENT; }
-"="                 { return ASSIGN; }
-","                 { return COMMA; }
 "print"             { return PRINT; }
 "length"             { return LENGTH; }
 "concat"             { return CONCAT; }
+{IDENT}             { return IDENT; }
+"="                 { return ASSIGN; }
+","                 { return COMMA; }
 \(                  { return LPAREN; }
 \)                  { return RPAREN; }
 \+                  { return PLUS; }
